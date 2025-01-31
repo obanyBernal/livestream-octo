@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -43,16 +44,15 @@
 
 /* inician estilos de reproductor */
 
+/* Contenedor Principal */
 .container {
-  text-align: center;
-  padding: 20px;
-  background-color: #121212; /* Fondo oscuro */
-  color: #ffffff; /* Texto blanco */
+  padding: 10px;
+  background-color: #16315c;
+  color: rgb(255, 255, 255);
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%; /* Ocupar todo el ancho de la pantalla */
 }
 
 .title {
@@ -60,40 +60,94 @@
   margin-bottom: 20px;
 }
 
+/* Diseño Responsive */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Estilo para Computadoras */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+/* Video */
 .video-container {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #222;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .video-frame {
-  width: 560px;
-  height: 315px;
+  width: 90%;
+  height: 70vh;
+  transition: transform 0.3s ease-in-out;
+}
+.video-frame:hover {
+  transform: scale(1.02); /* Efecto de zoom ligero */
 }
 
 .controls {
-  margin-top: 20px;
   display: flex;
+  margin-top: 10px;
   gap: 10px;
 }
 
-.input {
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+/* Comentarios */
+.comments-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.input:focus {
-  border-color: #4a90e2;
+.comment-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.comment-input input {
+  flex: 1;
+  background-color: #1b3d73; /* Fondo del input */
+  color: white; /* Texto blanco */
+  border: 1px solid #5d84cc; /* Borde del input */
+  border-radius: 4px;
+  padding: 10px;
+  outline: none; /* Quitar borde azul al hacer clic */
+  transition: border-color 0.3s ease-in-out;
+}
+
+.comment-input input:focus {
+  border-color: #ffffff; /* Cambia el color del borde al hacer foco */
+  background-color: #d8e5fa; /* Fondo del input */
+  color:#16315c;
+}
+
+.comments-list {
+  background-color: #2a58a3;
+  padding: 10px;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comment {
+  padding: 5px;
+  background-color: #5d84cc;
+  margin-bottom: 5px;
+  border-radius: 4px;
 }
 
 .button {
-  padding: 10px 20px;
   background-color: #007bff;
   color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -103,5 +157,14 @@
 .button:hover {
   background-color: #0056b3;
 }
+/* Estilos Responsivos para Celulares */
+@media (max-width: 767px) {
+  .video-frame {
+    height: 200px;
+  }
 
+  .comments-section {
+    margin-top: 20px;
+  }
+}
 /* finalizan estilos de reproductor */
