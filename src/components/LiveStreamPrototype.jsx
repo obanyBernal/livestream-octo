@@ -22,7 +22,7 @@ export default function LiveStreamPrototype() {
 
   return (
     <div className="container">
-      <h1 className="title">Transmisión en Vivo</h1>
+      <h1 className="title">Velación Online Capilla La Gloria</h1>
       <div className="content">
         {/* Sección del Video */}
         <div className="video-container">
