@@ -1,10 +1,9 @@
 import { useState } from "react";
 import "../App.css";
 import logo from "../assets/logo-guate.png";
-import difuntoImage from "../assets/daniela.jpeg"; // Asegúrate de tener la imagen
+import fotoDifunto from "../assets/daniela.jpeg";
 
 export default function LiveStreamPrototype() {
-  const [videoUrl] = useState("https://www.facebook.com/share/v/1H53nVuA6w/");
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
 
@@ -20,49 +19,54 @@ export default function LiveStreamPrototype() {
       <img src={logo} alt="Logo" className="live-logo-image" />
       <h1 className="title">Velación Online Capilla La Gloria</h1>
       <div className="content">
-        {/* Video */}
+        {/* Sección del Video */}
         <div className="video-container">
           <iframe
             className="video-frame"
-            src={videoUrl}
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FSquadgamergdl%2Fvideos%2F1671797887086797%2F&show_text=false&width=560&t=0"
+            //width="560"
+           // height="314"
+            style={{ border: "none", overflow: "hidden" }}
+            scrolling="no"
             frameBorder="0"
-            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen={true}
           ></iframe>
         </div>
 
-        {/* Información del difunto */}
+        {/* Información del Difunto */}
         <div className="info-difunto">
-          <img src={difuntoImage} alt="Difunto" className="foto-difunto" />
+          <img src={fotoDifunto} alt="Foto del Difunto" className="foto-difunto" />
           <h2 className="nombre-difunto">Daniela Ruben</h2>
           <p className="datos-difunto">
-            Nació: 12 de marzo de 1950<br />
-            Falleció: 29 de enero de 2025<br />
-            Siempre en nuestros corazones.<br />
+            Nació: 12 de marzo de 1950 <br />
+            Falleció: 29 de enero de 2025 <br />
+            Siempre en nuestros corazones. <br />
             Capilla La Gloria.
           </p>
         </div>
+      </div>
 
-        {/* Comentarios */}
-        <div className="comments-section">
-          <h2 className="comments-title">Comentarios</h2>
-          <p>Aqui puedes dejar tu pesame para la familia</p>
-          <div className="comment-input">
-            <input
-              type="text"
-              placeholder="Escribe tu pésame"
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              className="input"
-            />
-            <button onClick={handleAddComment} className="button">
-              Enviar
-            </button>
-          </div>
-          <div className="comments-list">
-            {comments.map((comment, index) => (
-              <p key={index} className="comment">{comment}</p>
-            ))}
-          </div>
+      {/* Sección de Comentarios */}
+      <div className="comments-section">
+        <h2 className="comments-title">Pesames</h2>
+        <p>En esta sección puedes escribir tu pésame para la familia doliente</p>
+        <div className="comment-input">
+          <input
+            type="text"
+            placeholder="Escribe tu pésame"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            className="input"
+          />
+          <button onClick={handleAddComment} className="button">
+            Enviar
+          </button>
+        </div>
+        <div className="comments-list">
+          {comments.map((comment, index) => (
+            <p key={index} className="comment">{comment}</p>
+          ))}
         </div>
       </div>
     </div>
