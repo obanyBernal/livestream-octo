@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LiveStreamPrototype from "./LiveStreamPrototype.jsx";
 import logo from "../assets/logo-guate.png";
 import "./LoginScreen.css";
-
-
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Controla si se muestra el login o el LiveStream
@@ -92,7 +90,7 @@ export default function App() {
         />
 
         <label htmlFor="password" className="login-label">
-          Contraseña (Opcional):
+          Contraseña (proporcionada por tu asesor):
         </label>
         <input
           type="password"

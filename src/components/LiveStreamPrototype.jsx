@@ -1,17 +1,12 @@
 import { useState } from "react";
 import "../App.css";
+import logo from "../assets/logo-guate.png";
+import difuntoImage from "../assets/daniela.jpeg"; // Asegúrate de tener la imagen
 
 export default function LiveStreamPrototype() {
-  const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/ylqyk1wbCzQ?si=Tv8H2ibd9L53RBqj");
-  const [customUrl, setCustomUrl] = useState("");
+  const [videoUrl] = useState("https://www.facebook.com/share/v/1H53nVuA6w/");
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-
-  const handleSetUrl = () => {
-    if (customUrl.trim() !== "") {
-      setVideoUrl(customUrl);
-    }
-  };
 
   const handleAddComment = () => {
     if (newComment.trim() !== "") {
@@ -22,9 +17,10 @@ export default function LiveStreamPrototype() {
 
   return (
     <div className="container">
+      <img src={logo} alt="Logo" className="live-logo-image" />
       <h1 className="title">Velación Online Capilla La Gloria</h1>
       <div className="content">
-        {/* Sección del Video */}
+        {/* Video */}
         <div className="video-container">
           <iframe
             className="video-frame"
@@ -33,10 +29,23 @@ export default function LiveStreamPrototype() {
             allowFullScreen
           ></iframe>
         </div>
-        
-        {/* Sección de Comentarios */}
+
+        {/* Información del difunto */}
+        <div className="info-difunto">
+          <img src={difuntoImage} alt="Difunto" className="foto-difunto" />
+          <h2 className="nombre-difunto">Daniela Ruben</h2>
+          <p className="datos-difunto">
+            Nació: 12 de marzo de 1950<br />
+            Falleció: 29 de enero de 2025<br />
+            Siempre en nuestros corazones.<br />
+            Capilla La Gloria.
+          </p>
+        </div>
+
+        {/* Comentarios */}
         <div className="comments-section">
           <h2 className="comments-title">Comentarios</h2>
+          <p>Aqui puedes dejar tu pesame para la familia</p>
           <div className="comment-input">
             <input
               type="text"

@@ -4,6 +4,7 @@
   padding: 1rem;
   text-align: center;
   width: 100%;
+  height: auto;
 }
 
 .logo {
@@ -12,9 +13,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -42,17 +45,30 @@
   color: #888;
 }
 
-/* inician estilos de reproductor */
-
-/* Contenedor Principal */
+/* Contenedor principal */
 .container {
   padding: 10px;
   background-color: #16315c;
   color: rgb(255, 255, 255);
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  width: 100%; /* Ocupar todo el ancho de la pantalla */
+  width: 100%;
+}
+
+.live-logo-image {
+  height: 4em;
+  padding: 0.5em;
+  margin-bottom: -1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.live-logo-image:hover {
+  filter: drop-shadow(0 0 1em #ffffff);
 }
 
 .title {
@@ -60,73 +76,93 @@
   margin-bottom: 20px;
 }
 
-/* Diseño Responsive */
+/* Estructura con Grid */
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: 
+    "video difunto"
+    "comentarios comentarios";
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
   width: 100%;
+  height: auto;
 }
 
-/* Estilo para Computadoras */
-@media (min-width: 768px) {
-  .content {
-    flex-direction: row;
-  }
+/* Estilo para las áreas */
+.video-container {
+  grid-area: video;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-difunto {
+  grid-area: difunto;
+  text-align: center;
+  background-color: #2a58a3;
+  padding: 15px;
+  border-radius: 2px;
+  margin-right: 30px;
+  color: white;
+}
+
+.comments-section {
+  grid-area: comentarios;
+  background-color: #1b3d73;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
 }
 
 /* Video */
-.video-container {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
 .video-frame {
   width: 90%;
   height: 70vh;
   transition: transform 0.3s ease-in-out;
 }
-.video-frame:hover {
-  transform: scale(1.02); /* Efecto de zoom ligero */
+
+/* Información del difunto */
+.foto-difunto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.controls {
-  display: flex;
-  margin-top: 10px;
-  gap: 10px;
+.nombre-difunto {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.datos-difunto {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Comentarios */
-.comments-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 .comment-input {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .comment-input input {
   flex: 1;
-  background-color: #1b3d73; /* Fondo del input */
-  color: white; /* Texto blanco */
-  border: 1px solid #5d84cc; /* Borde del input */
+  background-color: #1b3d73;
+  color: white;
+  border: 1px solid #5d84cc;
   border-radius: 4px;
   padding: 10px;
-  outline: none; /* Quitar borde azul al hacer clic */
+  outline: none;
   transition: border-color 0.3s ease-in-out;
 }
 
 .comment-input input:focus {
-  border-color: #ffffff; /* Cambia el color del borde al hacer foco */
-  background-color: #d8e5fa; /* Fondo del input */
-  color:#16315c;
+  border-color: #ffffff;
+  background-color: #d8e5fa;
+  color: #16315c;
 }
 
 .comments-list {
@@ -157,14 +193,23 @@
 .button:hover {
   background-color: #0056b3;
 }
-/* Estilos Responsivos para Celulares */
+
+/* Estilos responsivos */
 @media (max-width: 767px) {
+  .content {
+    grid-template-areas: 
+      "video"
+      "difunto"
+      "comentarios";
+    grid-template-columns: 1fr;
+  }
+
   .video-frame {
     height: 200px;
   }
 
+  .info-difunto,
   .comments-section {
     margin-top: 20px;
   }
 }
-/* finalizan estilos de reproductor */
