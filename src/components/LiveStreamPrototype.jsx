@@ -29,7 +29,7 @@ export default function LiveStreamPrototype() {
             style={{ border: "none", overflow: "hidden" }}
             scrolling="no"
             frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allow="autoplay; encrypted-media;"/*clipboard-write; picture-in-picture;web-share*/
             allowFullScreen={true}
           ></iframe>
         </div>
