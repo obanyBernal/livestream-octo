@@ -34,7 +34,7 @@ export default function App() {
   return (
     <div className="login-container">
       <img src={logo} alt="Logo" className="login-logo-image" />
-      <h1 className="login-title">Acceso al Sistema</h1>
+      <h1 className="login-title">Acceso a Capillas Virtuales</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="chapel" className="label">
           Selecciona una Capilla:
