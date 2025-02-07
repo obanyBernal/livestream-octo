@@ -1,9 +1,10 @@
 import { useState } from "react";
-import LiveStreamPrototype from "./LiveStreamPrototype.jsx";
-import logo from "../assets/logo-guate.png";
+import LiveStreamPrototype from "../LiveStream/LiveStreamPrototype";
+import logo from "@assets/images/logo-guate.png";
+import "../../App.css";
 import "./LoginScreen.css";
 
-export default function App() {
+export default function App({ onLogin }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Controla si se muestra el login o el LiveStream
 
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Formulario enviado:", formData);
-    // Simula el inicio de sesión exitoso
+    onLogin(formData.name); // Pasa el nombre del usuario al componente padre
     setIsLoggedIn(true);
   };
 
@@ -36,7 +37,7 @@ export default function App() {
       <img src={logo} alt="Logo" className="login-logo-image" />
       <h1 className="login-title">Acceso a Capillas Virtuales</h1>
       <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="chapel" className="label">
+        <label htmlFor="chapel" className="login-label">
           Selecciona una Capilla:
         </label>
         <select
@@ -101,7 +102,7 @@ export default function App() {
           className="login-input"
         />
 
-        <button type="submit" className="login-button ">
+        <button type="submit" className="login-button">
           Iniciar Sesión
         </button>
       </form>

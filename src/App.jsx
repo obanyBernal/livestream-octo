@@ -1,39 +1,16 @@
-/* import LiveStreamPrototype from "./components/LiveStreamPrototype";
-
-function App() {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <LiveStreamPrototype />
-    </div>
-  );
-}
-
-export default App;
- */
-//con este codigo podemos llamar un componente individual//
-/* import LoginScreen from "./components/LoginScreen";
-
-function App() {
-  return (
-    <div>
-      <LoginScreen />
-    </div>
-  );
-}
-
-export default App;
- */
 
 import { useState } from "react";
-import LoginScreen from "./components/LoginScreen";
-import LiveStreamPrototype from "./components/LiveStreamPrototype";
+import LoginScreen from "./components/LoginScreen/LoginScreen";
+import LiveStreamPrototype from "./components/LiveStream/LiveStreamPrototype";
 
 function App() {
   // Estado para alternar entre LoginScreen y LiveStreamPrototype
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState(""); // Almacena el nombre del usuario
 
   // Función para manejar el inicio de sesión
-  const handleLogin = () => {
+  const handleLogin = (name) => {
+    setUserName(name); // Actualiza el nombre del usuario
     setIsLoggedIn(true); // Cambia el estado a "logueado"
   };
 
@@ -41,7 +18,7 @@ function App() {
     <div>
       {isLoggedIn ? (
         // Si está logueado, muestra LiveStreamPrototype
-        <LiveStreamPrototype />
+        <LiveStreamPrototype userName={userName} />
       ) : (
         // Si no está logueado, muestra LoginScreen
         <LoginScreen onLogin={handleLogin} />

@@ -1,0 +1,26 @@
+.comment {
+    background-color: #2a58a3;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .comment-user {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .comment-content {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  .comment-timestamp {
+    font-size: 0.8rem;
+    color: #ddd;
+    text-align: right;
+  }
+  

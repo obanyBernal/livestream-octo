@@ -1,0 +1,90 @@
+
+/* Actualiza el fondo general al blanco */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Centrado vertical completo */
+  min-height: 100vh;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+}
+
+/* Logo */
+.login-logo-image {
+  max-width: 150px; /* Ajusta el tamaño del logo */
+  margin-bottom: 20px; /* Espaciado entre el logo y el título */
+}
+
+/* Título */
+.login-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center; /* Asegura que esté centrado */
+}
+
+/* Formulario */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+/* Etiquetas */
+.login-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 12px; /* Espaciado más cómodo */
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #eef6ff; /* Fondo sutil al enfocar */
+}
+
+/* Botón */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+  .login-form {
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Menos sombra en pantallas pequeñas */
+  }
+}
