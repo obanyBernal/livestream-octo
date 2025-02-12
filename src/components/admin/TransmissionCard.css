@@ -1,0 +1,51 @@
+.transmission-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #6C89A2;
+  }
+  
+  .transmission-card:hover {
+    background-color: rgb(130, 169, 203);
+  }
+  
+  .transmission-name {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .transmission-status {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background-color: #ee8787; /* Rojo */
+}
+
+.status-indicator.offline {
+  background-color: #a4b0be; /* Gris */
+}
+
+.status-text {
+  color: white;
+  font-size: 14px;
+}

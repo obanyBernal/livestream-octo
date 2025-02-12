@@ -1,0 +1,30 @@
+.admin-page {
+  display: flex;
+  height: 100vh;
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #043660; /* Ajusta el color de fondo */
+  padding-left: 20px; /* Ajusta el contenido hacia la izquierda */
+  padding-top: 20px; /* Lo empuja hacia arriba */
+  width: 100%;
+}
+
+.admin-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  justify-content: flex-start; /* Lo mantiene arriba */
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  margin-left: -20px; /* Se mueve más cerca del sidebar */
+  background-color: #406686;
+  border-radius: 0px 8px 8px 8px;
+}
+
+  

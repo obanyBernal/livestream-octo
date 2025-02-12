@@ -1,0 +1,31 @@
+.transmission-list {
+  width: 90%; /* Ajustamos el ancho para que ocupe casi todo el espacio disponible */
+  max-width: 100%; /* Evita que sea demasiado ancho en pantallas grandes */
+  /*background-color: #406686;*/
+  padding: 20px;
+  border-radius: 8px;
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+  text-align: center;
+  }
+
+  .transmission-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .transmission-list-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .transmission-list-empty {
+    color: #888;
+  }
+  
+  .transmission-list-items {
+    list-style: none;
+    padding: 0;
+  }
+  

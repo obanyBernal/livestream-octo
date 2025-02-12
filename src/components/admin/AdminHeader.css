@@ -1,0 +1,39 @@
+.admin-header {
+    background-color: #043660;
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .admin-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  
+  .admin-user {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .admin-user span {
+    font-weight: bold;
+  }
+  
+  .logout-button {
+    margin-left: 20px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: rgb(130, 169, 203);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #cebe2b;
+  }
+  
