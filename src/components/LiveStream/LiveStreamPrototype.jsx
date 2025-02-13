@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../App.css";
 import "./LiveStreamPrototype.css";
 import logo from "@assets/images/logo-guate.png";
-import fotoDifunto from "@assets/images/daniela.jpeg";
+import fotoDifunto from "@assets/images/liston.jpeg";
 import CommentsSection from "../Comments/CommentsSection";
 import PropTypes from "prop-types";
 
@@ -26,7 +26,7 @@ export default function LiveStreamPrototype({ userName }) {
         <div className="video-container">
           <iframe
             className="video-frame"
-            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FSquadgamergdl%2Fvideos%2F1671797887086797%2F&show_text=false&width=560&t=0"
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fobany1%2Fvideos%2F2407294649633531%2F%3Fidorvanity%3D859763109510821&show_text=false&width=560&t=0"
             //width="560"
             // height="314"
             style={{ border: "none", overflow: "hidden" }}
@@ -44,12 +44,11 @@ export default function LiveStreamPrototype({ userName }) {
             alt="Foto del Difunto"
             className="foto-difunto"
           />
-          <h2 className="nombre-difunto">Daniela Ruben</h2>
+          <h2 className="nombre-difunto">DIF. RODOLFO ALBERTO CARRANZA QUINTANILLA</h2>
           <p className="datos-difunto">
-            Nació: 12 de marzo de 1950 <br />
-            Falleció: 29 de enero de 2025 <br />
-            Siempre en nuestros corazones. <br />
-            Capilla La Gloria.
+          Inhumación: Parque Memorial El Eden <br />
+          Fecha: jueves 13 de febrero  <br />
+          Hora de salida: 9:00 am <br />
           </p>
         </div>
       </div>
