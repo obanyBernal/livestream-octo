@@ -6,8 +6,10 @@ export default function AdminHeader({ userName, onLogout }) {
   return (
     <header className="admin-header">
       <div className="admin-header-left">
-        <h1 className="admin-title">SISTEMA DE GESTION</h1>
+        <h1 className="admin-title">SISTEMA DE GESTION PARA TRANSMISIONES</h1>
+        <div className="admin-line"></div>
       </div>
+      
       <div className="admin-header-right">
         <p className="admin-user">
           Bienvenido, <span>{userName}</span>
@@ -16,6 +18,7 @@ export default function AdminHeader({ userName, onLogout }) {
           Cerrar Sesión
         </button>
       </div>
+      
     </header>
   );
 }

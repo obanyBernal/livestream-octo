@@ -9,7 +9,16 @@
   
   .admin-title {
     font-size: 1.5rem;
+    width: 100%;
     color: #ffffff;
+  }
+  .admin-line {
+    display: block;
+    width: 100%; /* Para que tome el ancho completo */
+    height: 0px;
+    background: transparent;
+    border: 3px solid #edd260;
+    margin-top: 10px; /* Ajusta según sea necesario */
   }
   
   .admin-user {

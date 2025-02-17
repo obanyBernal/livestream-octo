@@ -14,7 +14,7 @@ export default function LoginScreen({ onLogin }) {
 
   const [formData, setFormData] = useState({
     name: "",
-    /*email: "",*/
+    email: "",
     /*phone: "",*/
     password: "",
     chapel: "Capilla la Inspiración",
@@ -80,7 +80,7 @@ export default function LoginScreen({ onLogin }) {
           required
         />
 
-        {/*<label htmlFor="email" className="login-label">
+        <label htmlFor="email" className="login-label">
           Correo Electrónico (Opcional):
         </label>
         <input
@@ -92,7 +92,7 @@ export default function LoginScreen({ onLogin }) {
           className="login-input"
         />
 
-        <label htmlFor="phone" className="login-label">
+        {/*<label htmlFor="phone" className="login-label">
           Número de Teléfono (Opcional):
         </label>
         <input

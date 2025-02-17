@@ -1,30 +1,76 @@
 .transmission-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: #6C89A2;
-  }
-  
-  .transmission-card:hover {
-    background-color: rgb(130, 169, 203);
-  }
-  
-  .transmission-name {
-    font-size: 1rem;
-    color: white;
-  }
-  
-  .transmission-status {
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-  }
-  
-  
+  display: flex;
+  flex-direction: column; /* Asegurar que el contenido expandido se acomode abajo */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 15px 10px 10px;
+  border-radius: 8px;
+  background-color: #6C89A2;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+/*.transmission-card:hover {
+  background-color: rgb(130, 169, 203);
+}*/
+
+.transmission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.transmission-name {
+  font-size: 1rem;
+  color: white;
+}
+
+.transmission-status {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* 🟢 Indicador de estado */
+.status-indicator.online {
+  background-color: #28a745; /* Verde */
+}
+
+.status-indicator.offline {
+  background-color: #dc3545; /* Rojo */
+}
+
+.offline-button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+/* 🟢 Estilos dinámicos del botón */
+.offline-button.online {
+  background: #dc3545; /* Rojo cuando está online */
+  color: white;
+}
+
+.offline-button.offline {
+  background: #28a745; /* Verde cuando está offline */
+  color: white;
+}
+
+/* 🟢 Efecto hover */
+.offline-button:hover {
+  opacity: 0.8;
+}
+
+
 .status-container {
   display: flex;
   align-items: center;
@@ -48,4 +94,192 @@
 .status-text {
   color: white;
   font-size: 14px;
+}
+
+/* 🟢 Sección expandible con Grid */
+.transmission-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+  gap: 15px; /* Espaciado entre elementos */
+  padding: 15px 30px 0px 10px;
+  border-radius: 8px;
+  background: #6C89A2;
+  width: 95%;
+}
+
+/* 🟢 Asegurar que cada input se ajuste correctamente */
+.transmission-details input,
+.transmission-details textarea,
+.transmission-details select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f0f0f0;
+  font-size: 14px;
+  color: black;
+}
+
+/* 🟢 Etiquetas en negrita */
+.transmission-details label {
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 🟢 Clave de acceso y botón copiar en una sola línea */
+.access-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  grid-column: span 2; /* Ocupa ambas columnas */
+}
+
+/* 🟢 URL y Datos de inhumación ocupan toda la fila */
+.url-container,
+.inhumation-container {
+  grid-column: span 2;
+}
+
+/*NUEVAS CLASES PARA EL INPUT URL*/
+/* 🟢 Contenedor del input de URL con el icono */
+.url-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #6C89A2;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/* 🟢 Estilo del input */
+.url-input-container input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.url-input-container input:disabled {
+  color: #ddd;
+  cursor: not-allowed;
+}
+.url-input-container input:enabled {
+  background-color: white;
+  color: black;
+  cursor: not-allowed;
+}
+
+
+/* 🟢 Botón de edición */
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.edit-button img {
+  width: 18px; /* Ajusta el tamaño del icono */
+  height: 18px;
+  object-fit: contain; /* Asegura que el icono no se deforme */
+}
+
+.edit-button:hover {
+  color: #f4c542;
+}
+
+
+
+/* 🟢 Foto y botones alineados correctamente */
+.file-container {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #012;
+}
+
+.file-container input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.custom-file-button {
+  background-color: #16315c;
+  color: #012;  /* Color negro */
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.custom-file-button:hover {
+  background-color: #edd260;
+}
+
+
+/* 🟢 Botones alineados a la derecha */
+.actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 🟢 Mostrar detalles cuando está expandido */
+.transmission-card.expanded .transmission-details {
+  display: grid;
+}
+
+.copy-button {
+  background: #16315c;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.copy-button:hover {
+  background-color: #edd260;
+}
+
+.offline-button {
+  background: #ccc;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.offline-button:hover{
+  background-color: #ee8787;
+}
+
+.save-button {
+  background: #16315c;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-button:hover{
+  background-color: #0cb848;
 }
